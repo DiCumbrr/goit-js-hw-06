@@ -7,14 +7,25 @@ const ingredients = [
   'Condiments'
 ]
 
-const table = document.querySelector('#ingredients')
+const list = document.querySelector("#ingredients");
 
-const createLi = ingredients.map(elem => {
-  const li = document.createElement('li')
+const elements = ingredients.map((option) => {
+  const listItemEl = document.createElement("li");
+  listItemEl.textContent = `${option}`;
+  listItemEl.classList.add("item");
+  return listItemEl;
+});
 
-  li.textContent = elem
+list.append(...elements);
 
-  li.classList.add('item')
+// const table = document.querySelector('#ingredients')
 
-  table.appendChild(li)
-})
+// const createLi = ingredients.map(elem => {
+//   const li = document.createElement('li')
+
+//   li.textContent = elem
+
+//   li.classList.add('item')
+
+//   table.appendChild(li)
+// })
